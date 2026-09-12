@@ -1,0 +1,6 @@
+{
+  "python.REPL.enableREPLSmartSend": false,
+  "python.testing.pytestArgs": ["FFC"],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true
+}
