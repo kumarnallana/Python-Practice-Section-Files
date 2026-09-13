@@ -1,0 +1,30 @@
+[
+  {
+    "product_id": 1001,
+    "product_name": "Laptop",
+    "category": "Electronics",
+    "price": 65000,
+    "quantity": 8
+  },
+  {
+    "product_id": 1002,
+    "product_name": "Keyboard",
+    "category": "Electronics",
+    "price": 2500,
+    "quantity": 25
+  },
+  {
+    "product_id": 1003,
+    "product_name": "Mouse",
+    "category": "Electronics",
+    "price": 1200,
+    "quantity": 40
+  },
+  {
+    "product_id": 1004,
+    "product_name": "Mobile stand with cooling pad",
+    "category": "Electronics",
+    "price": 800,
+    "quantity": 25
+  }
+]
