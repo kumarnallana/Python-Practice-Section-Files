@@ -66,16 +66,36 @@ class JsonManager:
         except Exception as e:
             return e
 
-    def find_data(self, target_id):
-        # try:
-        with open(self.json_file, "r", encoding="utf-8") as file:
-            product_dict_data = json.load(file)
+    def find_data(self, target_id: int):
+        try:
+            with open(self.json_file, "r", encoding="utf-8") as file:
+                product_dict_data = json.load(file)
 
-            if product_dict_data["product_id"] == target_id:
-                return json.dumps(product_dict_data, indent=4)
+                for product in product_dict_data:
+                    if product["product_id"] == target_id:
+                        return json.dumps(product, indent=4)
 
-        # except Exception as e:
-        #     return e
+        except Exception as e:
+            return e
+
+    def update_quantity(self, target_id: int, new_quantity: int):
+        try:
+            with open(self.json_file, "r", encoding="utf-8") as file:
+
+                product_db = json.load(file)
+
+                for product in product_db:
+                    if product.get("product_id") == target_id:
+                        product["quantity"] = new_quantity
+
+                        with open(self.json_file, "w", encoding="utf-8") as file:
+                            json.dump(product_db, file, indent=4)
+
+                        return json.dumps(product, indent=4)
+
+                return f"Product with ID {target_id} not found."
+        except Exception as e:
+            return e
 
 
 new_product: dict[str: str | int] = {
@@ -92,4 +112,6 @@ if __name__ == "__main__":
 
     # print(manager.append_data(new_product))
 
-    print(manager.find_data(1002))
+    # print(manager.find_data(1004))
+
+    print(manager.update_quantity(1003, 500))

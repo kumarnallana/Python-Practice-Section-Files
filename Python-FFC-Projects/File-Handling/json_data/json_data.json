@@ -18,13 +18,6 @@
     "product_name": "Mouse",
     "category": "Electronics",
     "price": 1200,
-    "quantity": 40
-  },
-  {
-    "product_id": 1004,
-    "product_name": "Mobile stand with cooling pad",
-    "category": "Electronics",
-    "price": 800,
-    "quantity": 25
+    "quantity": 500
   }
 ]
