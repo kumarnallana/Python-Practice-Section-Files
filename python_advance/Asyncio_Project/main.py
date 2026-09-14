@@ -3,12 +3,13 @@ import json
 from pathlib import Path
 import asyncio
 
-import time 
+import time
+
 
 class CreateJson():
-    def create_json(self,provided_db:list[dict[str: str | int]]):
+    def create_json(self, provided_db: list[dict[str, str | int]]):
         try:
-            
+
             if not provided_db:
                 return None
 
@@ -34,9 +35,9 @@ async def main():
 
         api = await external_api.api_response()
 
-        create_json_db = CreateJson()
-
-        database = create_json_db.create_json(api)
+        if isinstance(api, list):
+            create_json_db = CreateJson()
+            database = create_json_db.create_json(api)
 
         end_time = time.perf_counter()
 
@@ -46,7 +47,6 @@ async def main():
 
     except Exception as e:
         return f"Error: {e}"
-
 
 
 if __name__ == "__main__":

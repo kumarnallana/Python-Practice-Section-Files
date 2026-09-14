@@ -14,13 +14,12 @@ class FetchExternalApi:
             return f"Error: {e}"
 
     async def api_response(self):
-      try:
-          async with httpx.AsyncClient(timeout=10.02) as client:
+        try:
+            async with httpx.AsyncClient(timeout=10.02) as client:
 
-            json_data = await self.fetch_json(client, "https://jsonplaceholder.typicode.com/photos")
+                json_data = await self.fetch_json(client, "https://jsonplaceholder.typicode.com/photos")
 
-            return json_data
-            
-      except Exception as e:
-        return f"Error: {e}"
-        
+                return json_data
+
+        except Exception as e:
+            return f"Error: {e}"
