@@ -1,0 +1,16 @@
+2026-09-16 10:01:14,850 - INFO - program  Started
+2026-09-16 10:01:14,851 - INFO - {'product_id': 1001, 'name': 'Laptop', 'quantity': 8}
+2026-09-16 10:01:14,851 - WARNING - 1001 have low stock
+2026-09-16 10:01:14,851 - INFO - program  Started
+2026-09-16 10:01:14,851 - INFO - {'product_id': 1002, 'name': 'Keyboard', 'quantity': 25}
+2026-09-16 10:01:14,851 - INFO - program  Started
+2026-09-16 10:01:14,851 - INFO - {'product_id': 1003, 'name': 'Mouse', 'quantity': 3}
+2026-09-16 10:01:14,851 - WARNING - 1003 have low stock
+2026-09-16 10:01:14,851 - INFO - Process completed
+2026-09-16 10:02:03,830 - INFO - Program started
+2026-09-16 10:02:03,831 - INFO - {'product_id': 1001, 'name': 'Laptop', 'quantity': 8}
+2026-09-16 10:02:03,831 - WARNING - 1001 has low stock
+2026-09-16 10:02:03,840 - INFO - {'product_id': 1002, 'name': 'Keyboard', 'quantity': 25}
+2026-09-16 10:02:03,840 - INFO - {'product_id': 1003, 'name': 'Mouse', 'quantity': 3}
+2026-09-16 10:02:03,840 - WARNING - 1003 has low stock
+2026-09-16 10:02:03,840 - INFO - Process completed

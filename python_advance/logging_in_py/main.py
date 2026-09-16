@@ -23,16 +23,17 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
+logging.info("Program started")
+
 for product in products:
-    logging.info("program  Started")
 
     logging.info(product)
 
-    if product["quantity"] < 10:
-        logging.warning(f"{product["product_id"]} have low stock")
-    elif not product["product_id"]:
-        logging.error(
-            "Invalid product data, every product should have valid id")
+    quantity = product.get("quantity")
+    if not product.get("product_id"):
+        logging.error("Invalid product data, every product should have valid id")
+    elif isinstance(quantity, int) and quantity < 10:
+        logging.warning(f"{product['product_id']} has low stock")
 
 
 logging.info("Process completed")

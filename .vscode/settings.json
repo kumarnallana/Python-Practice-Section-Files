@@ -1,6 +1,5 @@
 {
-  "python.languageServer": "Pylance",
-  "python.analysis.typeCheckingMode": "basic",
+  "python.languageServer": "Default",
   "editor.semanticHighlighting.enabled": true,
 
   "editor.semanticTokenColorCustomizations": {
