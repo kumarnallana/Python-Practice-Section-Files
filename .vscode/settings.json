@@ -1,13 +1,5 @@
 {
   "python.languageServer": "Default",
-  "python.analysis.extraPaths": [
-    "${workspaceFolder}/python_advance/Asyncio_Project_2",
-    "${workspaceFolder}/python_advance/Asyncio_Project"
-  ],
-  "python.autoComplete.extraPaths": [
-    "${workspaceFolder}/python_advance/Asyncio_Project_2",
-    "${workspaceFolder}/python_advance/Asyncio_Project"
-  ],
   "editor.semanticHighlighting.enabled": true,
 
   "editor.semanticTokenColorCustomizations": {
