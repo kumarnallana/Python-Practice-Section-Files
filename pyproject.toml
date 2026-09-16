@@ -7,7 +7,10 @@ authors = [
     { name = "kumar nallana", email = "sasikumarnallana956@gmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "httpx>=0.28.1",
+    "python-dotenv>=1.2.3",
+]
 
 [project.scripts]
 python-practice-section-files = "python_practice_section_files:main"
@@ -19,4 +22,9 @@ build-backend = "uv_build"
 [dependency-groups]
 dev = [
     "pytest>=9.1.1",
+]
+
+[tool.uv.workspace]
+members = [
+    "python_advance/env_project",
 ]
