@@ -1,23 +1,43 @@
+from typing import Any
+
 import httpx
-import json
-from pathlib import Path
-import logging
 
 
 class ExternalApiCall:
 
-    logging.basicConfig(level=logging.DEBUG)
+    def __init__(self, url: str):
+        self.url = url
 
-    async def fetch(self, client: httpx.AsyncClient, url: str):
-        response = await client.get(url)
-
+    async def get(self, client: httpx.AsyncClient) -> dict[str, Any]:
+        response = await client.get(self.url)
         response.raise_for_status()
-
         return response.json()
 
-    async def get(self):
-        async with httpx.AsyncClient(timeout=10.05) as client:
+    async def create(
+        self, client: httpx.AsyncClient, product: dict[str, Any]
+    ) -> dict[str, Any]:
+        response = await client.post(f"{self.url}/add", json=product)
+        response.raise_for_status()
+        return response.json()
 
-            external_db = await self.fetch(client, "https://dummyjson.com/products")
+    async def update(
+        self,
+        client: httpx.AsyncClient,
+        target_id: int,
+        product: dict[str, Any],
+    ) -> dict[str, Any]:
+        self._validate_id(target_id)
+        response = await client.put(f"{self.url}/{target_id}", json=product)
+        response.raise_for_status()
+        return response.json()
 
-            return external_db
+    async def delete(self, client: httpx.AsyncClient, target_id: int) -> dict[str, Any]:
+        self._validate_id(target_id)
+        response = await client.delete(f"{self.url}/{target_id}")
+        response.raise_for_status()
+        return response.json()
+
+    @staticmethod
+    def _validate_id(target_id: int) -> None:
+        if not isinstance(target_id, int) or target_id <= 0:
+            raise ValueError("An id should be a positive integer")
