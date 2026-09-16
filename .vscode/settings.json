@@ -1,7 +1,50 @@
 {
+  "python.languageServer": "Pylance",
+  "python.analysis.typeCheckingMode": "basic",
+  "editor.semanticHighlighting.enabled": true,
+
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true,
+    "rules": {
+      "method": {
+        "foreground": "#50FA7B",
+        "fontStyle": "bold"
+      },
+      "function": {
+        "foreground": "#50FA7B"
+      },
+      "class": {
+        "foreground": "#8BE9FD",
+        "fontStyle": "bold"
+      },
+      "parameter": {
+        "foreground": "#FFB86C",
+        "fontStyle": "italic"
+      },
+      "variable": {
+        "foreground": "#F8F8F2"
+      }
+    }
+  },
+
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "entity.name.function",
+          "entity.name.function.member",
+          "meta.function-call",
+          "support.function"
+        ],
+        "settings": {
+          "foreground": "#50FA7B"
+        }
+      }
+    ]
+  },
+
   "python.REPL.enableREPLSmartSend": false,
   "python.testing.pytestArgs": ["FFC"],
   "python.testing.unittestEnabled": false,
-  "python.testing.pytestEnabled": true,
-  "python.analysis.extraPaths": ["./python_advance/Asyncio_Project"]
+  "python.testing.pytestEnabled": true
 }
