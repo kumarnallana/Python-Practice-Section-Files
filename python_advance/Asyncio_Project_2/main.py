@@ -1,3 +1,4 @@
+import time
 import asyncio
 import logging
 from pathlib import Path
@@ -7,12 +8,9 @@ from app import ExternalApiCall
 logging.basicConfig(level=logging.DEBUG)
 
 
-async def create_local_db(self):
+def create_local_db(provided_db: list[dict[str, str | int]]):
     try:
-
-        external_db = ExternalApiCall()
-
-        external_db = await self.get()
+        external_db = provided_db
 
         if not external_db:
             logging.warning("Api not available")
@@ -29,8 +27,19 @@ async def create_local_db(self):
         with open(json_data, "w", encoding="utf-8") as file:
             json.dump(external_db, file, indent=4)
 
+        logging.info("Local database is created Successfully")
+
     except Exception as e:
         logging.error(e)
 
+
+async def main():
+
+    start_time = time.perf_counter()
+
+    external_api = ExternalApiCall()
+    api = await external_api.get()
+
+
 if __name__ == "__main__":
-    asyncio.run(create_local_db())
+    asyncio.run(main())

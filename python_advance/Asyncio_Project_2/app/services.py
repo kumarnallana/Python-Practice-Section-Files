@@ -21,6 +21,3 @@ class ExternalApiCall:
             external_db = await self.fetch(client, "https://dummyjson.com/products")
 
             return external_db
-
-
-logging.info("Local database is created Successfully")
