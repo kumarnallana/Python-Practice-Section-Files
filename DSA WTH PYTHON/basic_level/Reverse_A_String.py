@@ -6,6 +6,7 @@ class Solution:
         return count
 
     def reverseString(self, s: list[str]) -> str:
+
         n = self.manual_length(s)
         left = 0
         right = n - 1
@@ -14,7 +15,7 @@ class Solution:
             s[left], s[right] = s[right], s[left]
             left += 1
             right -= 1
-            return s
+        return s
 
 
 reverse_string = Solution()
