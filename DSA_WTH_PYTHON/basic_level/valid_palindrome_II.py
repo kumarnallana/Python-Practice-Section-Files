@@ -1,3 +1,15 @@
+"""
+LeetCode 680 — Valid Palindrome II
+
+Pattern: Two Pointers → Opposite Ends → Conditional Skip
+
+Problem
+
+Given a string s, return True if the string can become a palindrome after deleting at most one character.
+
+"""
+
+
 class Solution:
     def manual_length(self, s: str) -> int:
         count = 0
