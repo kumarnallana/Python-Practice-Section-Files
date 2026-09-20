@@ -6,7 +6,7 @@
 
 # Given an integer array nums and an integer val, remove every occurrence of val in-place and return the number of elements that are not equal to val.
 
-nums = [3, 2, 2, 3]
+nums = [3, 2, 2, 3, 2, 4, 5]
 val = 3
 
 
@@ -31,3 +31,9 @@ class Solution:
                 slow += 1
 
             fast += 1
+
+        return slow
+
+
+solution = Solution()
+print(solution.remove_element(nums, val))
