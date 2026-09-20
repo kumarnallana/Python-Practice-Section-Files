@@ -21,7 +21,7 @@ class Solution:
             if nums[fast] not in seen:
                 nums[slow] = nums[fast]
                 slow += 1
-                seen += nums[fast]
+                seen.add(nums[fast])
 
             fast += 1
 
