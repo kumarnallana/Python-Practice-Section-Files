@@ -28,3 +28,6 @@ class Solution:
             if nums[fast] != value:
                 # storing k element into the nums[0] indexwhich is not equal to value
                 nums[slow] = nums[fast]
+                slow += 1
+
+            fast += 1
