@@ -1,4 +1,4 @@
-nums: list[int] = [0, 0, 1, 1]
+nums: list[int] = [0, 0, 1, 1, 2, 2, 3, 3, 4, 5, 6, 7, 8, 9]
 
 
 class Solution:
