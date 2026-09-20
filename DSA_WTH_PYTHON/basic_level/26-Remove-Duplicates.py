@@ -12,16 +12,14 @@ class Solution:
 
     def removeDuplicates(self, nums: list[int]) -> int:
         n = self.manual_length(nums)
-        slow = 0
-        fast = 0
-        seen = set()
+        slow = 1
+        fast = 1
 
         while fast < n:
 
-            if nums[fast] not in seen:
+            if nums[fast] != nums[slow - 1]:
                 nums[slow] = nums[fast]
                 slow += 1
-                seen.add(nums[fast])
 
             fast += 1
 
