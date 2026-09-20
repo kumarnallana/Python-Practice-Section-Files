@@ -1,4 +1,4 @@
-nums: list[int] = [1, 1, 1, 2, 2, 3]
+nums: list[int] = [1, 1, 1, 2, 2, 3, 3]
 
 
 class Solution:
@@ -12,12 +12,12 @@ class Solution:
 
     def removeDuplicates(self, nums: list[int]) -> int:
         n = self.manual_length(nums)
-        slow = 1
-        fast = 1
+        slow = 2
+        fast = 2
 
         while fast < n:
 
-            if nums[fast] != nums[slow - 1]:
+            if nums[fast] != nums[slow - 2]:
                 nums[slow] = nums[fast]
                 slow += 1
 
