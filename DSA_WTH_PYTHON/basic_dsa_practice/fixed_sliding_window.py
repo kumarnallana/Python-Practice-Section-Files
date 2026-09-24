@@ -1,4 +1,3 @@
-# Find the maximum sum of any 3 consecutive numbers.
 
 nums = [2, 1, 5, 1, 3, 2]
 k = 3
@@ -10,13 +9,12 @@ class Solution:
         count = 0
         for _ in nums:
             count += 1
-
         return count
 
-    def max_sum_arr(self, nums: list[int], k) -> int:
+    def fixed_sliding_window(self, nums: list[int], k: int) -> int:
         n = self.manual_length(nums)
-        right = 0
         left = 0
+        right = 0
 
         current_sum = 0
         max_sum = 0
@@ -31,8 +29,8 @@ class Solution:
                     max_sum = current_sum
 
                 current_sum -= nums[left]
-                left += 1
 
+                left += 1
             right += 1
 
         return max_sum
@@ -40,4 +38,4 @@ class Solution:
 
 solution = Solution()
 
-print(solution.max_sum_arr(nums, k))
+print(solution.fixed_sliding_window(nums, k))
